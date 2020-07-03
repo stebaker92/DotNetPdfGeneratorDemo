@@ -144,10 +144,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocumentGeneratorBase.cs" />
-    <Compile Include="PuppeteerDocumentGenerator.cs" />
-    <Compile Include="MyDocumentData.cs" />
-    <Compile Include="MyDocumentGenerator.cs" />
+    <Compile Include="Generators\DocumentGeneratorBase.cs" />
+    <Compile Include="Generators\PuppeteerDocumentGenerator.cs" />
+    <Compile Include="Generators\MyDocumentData.cs" />
+    <Compile Include="Generators\MyDocumentGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -159,12 +159,7 @@
     <Content Include="DocumentTemplates\MyDocument.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DocumentTemplates\RecommendationHtmlVersion\images\level-1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DocumentTemplates\RecommendationHtmlVersion\styles.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
