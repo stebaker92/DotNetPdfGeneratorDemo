@@ -6,13 +6,13 @@ namespace PuppetPdf
     {
         private const string Filename = "MyDocument.html";
 
-        public Task<byte[]> Generate(MyDocumentData data)
+        public async Task<byte[]> Generate(MyDocumentData data)
         {
             var html = string.Empty;
             html = ReadFileText(Filename);
             html = ReplacePlaceholders(html, data);
             var puppeteer = new PuppeteerDocumentGenerator();
-            var pdfBytes = puppeteer.Generate(html);
+            var pdfBytes = await puppeteer.Generate(html);
             return pdfBytes;
         }
 
