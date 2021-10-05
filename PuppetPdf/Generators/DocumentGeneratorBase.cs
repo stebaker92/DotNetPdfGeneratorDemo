@@ -5,10 +5,11 @@ namespace PuppetPdf
 {
     public class DocumentGeneratorBase
     {
+        const string docTemplateFolder = "DocumentTemplates";
+        
         protected virtual string GetDocumentPath(string filename)
         {
             var root = GetRootPath();
-            var docTemplateFolder = "DocumentTemplates";
             var fullPath = Path.Combine(root, docTemplateFolder, filename);
 
             return fullPath;
@@ -16,13 +17,8 @@ namespace PuppetPdf
 
         protected string GetRootPath()
         {
-            //var path = System.Web.Hosting.HostingEnvironment.MapPath("~");
-            string path = null;
-            if (path == null)
-            {
-                path = new Uri(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).LocalPath;
-                path = Path.GetDirectoryName(path);
-            }
+            var assemblyPath = new Uri(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).LocalPath;
+            var path = Path.GetDirectoryName(assemblyPath);
 
             return path;
         }
