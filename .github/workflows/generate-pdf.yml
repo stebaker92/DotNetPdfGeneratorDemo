@@ -2,13 +2,12 @@ name: .NET
 
 on:
   push:
-    branches: [ ci ]
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -26,6 +25,6 @@ jobs:
     - name: Archive artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: dist-without-markdown
+        name: generated-pdf
         path: |
           **/*.pdf
