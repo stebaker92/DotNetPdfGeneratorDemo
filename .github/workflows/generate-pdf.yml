@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Generate PDF
-      run: dotnet run
+      run: dotnet run --project=PuppetPdf/PuppetPdf.csproj
     - name: Archive artifacts
       uses: actions/upload-artifact@v2
       with:
